@@ -14,7 +14,7 @@ In this case, I am using *Fedora Linux* distribution. The SD card's name is *mm
 
    ```fdisk -l /dev/mmcblk0```
 
-in this example, the result is:
+   in this example, the result is:
 
    ```
    Device         Boot  Start      End  Sectors  Size Id Type
