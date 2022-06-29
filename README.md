@@ -17,6 +17,7 @@ The project consists of the following auto-compiling and installing bash scripts
 * Commodore 64/128/Pet emulator **VICE**,
 * A **Virtual Modem** using the *tty0tty* and *tcpser* projects, running with the two aforementioned emulators for *Apple* and *Commodore* products, and on *Raspberry Pi OS* itself, as well as allowing any original terminal retro-software to connect with modern-day telnet BBSs,
 * CD-ROM, DVD-ROM emulator **CDEmu** which allows mounting CD images (iso, toast, cue/bin, mds/mdf etc.) under *Raspberry Pi OS* - runs with *BasiliskII* and *SheepShaver* emulators, as well as on *Raspberry Pi OS*. The emulators are configured automatically to support that virtual CD-ROM drive.
+* A consistent **launcher** that runs all of those systems at different resolutions (after reboot) and in different configurations.
 * **SyncTERM** - an application for connecting with BBSs from the *Raspberry Pi OS*, compiled in combination with the *SDL library*,
 * Information how to run *Raspberry Pi OS* in **dual-boot** with **BMC64**, the fastest *Commodore* emulator for *Raspberry Pi* (bare metal/low latency emulator).
 

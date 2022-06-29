@@ -16,7 +16,7 @@ ROM4OS[8]="https://github.com/macmade/Macintosh-ROMs/raw/main/Quadra-650.ROM"
 ROM4OS[9]="https://www.redundantrobot.com/sheepshaver_files/roms/newworld86.rom.zip"
 
 function usercheck {
-  [ $USER != "pi" ] && echo "Run this script as user pi" && exit
+  [ $USER != "pi" ] && echo 'Run this script as the "pi" user.' && exit
 }
 
 function updateinfo {
@@ -173,8 +173,8 @@ cd ${SRC_DIR}/SDL2-2.0.7 &&
             --disable-video-mir \
             --disable-video-wayland \
             --enable-video-kmsdrm \
-	    --enable-alsa \
-	    --enable-audio &&
+            --enable-alsa \
+            --enable-audio &&
 make -j3
 sudo make install
 
@@ -203,5 +203,28 @@ function MacOS_version {
     rm -rf $MACOS_DIR 2>/dev/null
     mkdir $MACOS_DIR 2>/dev/null
     Launcher
+}
+
+
+function logo {
+
+    logotype=( " __  __            _       _            _     "
+               "____  _ \n"
+               '|  \/  | __ _  ___(_)_ __ | |_ ___  ___| |__ '
+               "|  _ \\(_)\n"
+               '| |\/| |/ _  |/ __| |  _ \| __/ _ \/ __|  _ \'
+               "| |_) | |\n"
+               '| |  | | (_| | (__| | | | | || (_) \__ \ | | '
+               "|  __/| |\n"
+               '|_|  |_|\__,_|\___|_|_| |_|\__\___/|___/_| |_'
+               "|_|   |_|\n" 
+             );
+
+    clear && echo
+    for i in {0..9}; do 
+        [ $(($i % 2)) -gt "0" ] && printf "\e[93m" || printf "\e[96m"
+        printf "${logotype[${i}]}"
+    done
+    printf "\e[0m\n"
 }
 
