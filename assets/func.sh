@@ -1,5 +1,20 @@
 #!/bin/bash
+# --------------------------------------------------------
+# MacintoshPi
+# --------------------------------------------------------
+# It is a small project that allows running full-screen
+# versions of Apple's Mac OS 7, 8 and 9 with audio,
+# active online connection and modem emulation under
+# Raspberry Pi. All that without the window manager,
+# and entirely from the CLI / Raspberry Pi OS Lite level.
+# --------------------------------------------------------
+# Author: Jarosław Mazurkiewicz  /  jaromaz
+# www: https://jm.iq.pl  e-mail: jm at iq.pl
+# --------------------------------------------------------
+# MacintoshPi functions 
+# --------------------------------------------------------
 
+VERSION="1.1.0"
 BASE_DIR="/usr/share/macintoshpi"
 CONF_DIR="/etc/macintoshpi"
 SRC_DIR="${BASE_DIR}/src"
@@ -225,6 +240,9 @@ function logo {
         [ $(($i % 2)) -gt "0" ] && printf "\e[93m" || printf "\e[96m"
         printf "${logotype[${i}]}"
     done
+    echo
+    for i in {1..47}; do printf ' '; done
+    echo "v.${VERSION}"
     printf "\e[0m\n"
 }
 

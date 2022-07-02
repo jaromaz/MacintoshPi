@@ -1,4 +1,18 @@
 #!/bin/bash
+# --------------------------------------------------------
+# MacintoshPi
+# --------------------------------------------------------
+# It is a small project that allows running full-screen
+# versions of Apple's Mac OS 7, 8 and 9 with audio,
+# active online connection and modem emulation under
+# Raspberry Pi. All that without the window manager,
+# and entirely from the CLI / Raspberry Pi OS Lite level.
+# --------------------------------------------------------
+# Author: Jarosław Mazurkiewicz  /  jaromaz
+# www: https://jm.iq.pl  e-mail: jm at iq.pl
+# --------------------------------------------------------
+# Mac OS 8 - SheepShaver auto-compile/install script
+# --------------------------------------------------------
 
 printf "\e[92m"; echo '
  __  __             ___  ____     ___  
