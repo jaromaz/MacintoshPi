@@ -8,7 +8,7 @@
 # Raspberry Pi. All that without the window manager,
 # and entirely from the CLI / Raspberry Pi OS Lite level.
 # --------------------------------------------------------
-# Author: Jarosław Mazurkiewicz  /  jaromaz
+# Author: Jaroslaw Mazurkiewicz  /  jaromaz
 # www: https://jm.iq.pl  e-mail: jm at iq.pl
 # --------------------------------------------------------
 # Mac OS 7 - Basilisk II auto-compile/install script

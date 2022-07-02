@@ -8,12 +8,13 @@
 # Raspberry Pi. All that without the window manager,
 # and entirely from the CLI / Raspberry Pi OS Lite level.
 # --------------------------------------------------------
-# Author: Jarosław Mazurkiewicz  /  jaromaz
+# Author: Jaroslaw Mazurkiewicz  /  jaromaz
 # www: https://jm.iq.pl  e-mail: jm at iq.pl
 # --------------------------------------------------------
 source assets/func.sh
 usercheck
 logo
+exit
 updateinfo
 installinfo
 for APP in macos7 macos8 macos9 vice cdemu vmodem syncterm; do
