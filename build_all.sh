@@ -14,7 +14,6 @@
 source assets/func.sh
 usercheck
 logo
-exit
 updateinfo
 installinfo
 for APP in macos7 macos8 macos9 vice cdemu vmodem syncterm; do
