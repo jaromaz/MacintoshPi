@@ -30,7 +30,6 @@
         echo
         echo "List of Main Commands:"
         echo
-        echo "--help"
         for i in {7..9}; do echo "os${i}"; done
         [ -d "$CONF_DIR" ] && ls -1 $CONF_DIR
         echo
