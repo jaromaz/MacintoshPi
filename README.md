@@ -140,7 +140,7 @@ The launcher's task is to launch a given version of *Mac OS*, and if one is alre
 
 The name of the directory with the data with which the system is to be overwritten is identical as the name of the parameter following the ```mac``` command, e.g. ```mac os8-480``` will restart *Raspberry Pi OS* in 640x480 resolution, and then launch ```Mac OS 8``` also in that resolution, but the ```mac os8``` command will simply launch *Mac OS 8* in the most recently selected resolution.
 
-The Launcher allows also ```.img``` or ```.dsk``` files to be added to *Mac OS* using e.g. ```mac os7 plik.img``` - then the *Mac OS* concerned will be launched and the image content will appear on the desktop as an additional drive.
+The Launcher allows also ```.img``` or ```.dsk``` files to be added to *Mac OS* using e.g. ```mac os7 file.img``` - then the *Mac OS* concerned will be launched and the image content will appear on the desktop as an additional drive.
 
 ### SyncTERM
 
