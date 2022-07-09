@@ -12,16 +12,19 @@ A much longer version of the clip can be [found here](https://www.youtube.com/wa
 
 The project consists of the following auto-compiling and installing bash scripts for Raspberry Pi:
 
-* Macintosh 68K emulator **Basilisk II** supporting Mac OS 7 (System 7.5.5) and Mac OS 8,
-* PowerPC emulator **SheepShaver** supporting Mac OS 9,
-* Commodore 64/128/Pet emulator **VICE**,
-* A **Virtual Modem** using the *tty0tty* and *tcpser* projects, running with the two aforementioned emulators for *Apple* and *Commodore* products, and on *Raspberry Pi OS* itself, as well as allowing any original terminal retro-software to connect with modern-day telnet BBSs,
-* CD-ROM, DVD-ROM emulator **CDEmu** which allows mounting CD images (iso, toast, cue/bin, mds/mdf etc.) under *Raspberry Pi OS* - runs with *BasiliskII* and *SheepShaver* emulators, as well as on *Raspberry Pi OS*. The emulators are configured automatically to support that virtual CD-ROM drive.
-* A consistent **launcher** that runs all of those systems at different resolutions (after reboot) and in different configurations.
-* **SyncTERM** - an application for connecting with BBSs from the *Raspberry Pi OS*, compiled in combination with the *SDL library*,
-* Information how to run *Raspberry Pi OS* in **dual-boot** with **BMC64**, the fastest *Commodore* emulator for *Raspberry Pi* (bare metal/low latency emulator).
+* Macintosh 68K emulator **[Basilisk II](https://basilisk.cebix.net)** supporting Mac OS 7 (System 7.5.5) and Mac OS 8.
+* PowerPC emulator **[SheepShaver](https://sheepshaver.cebix.net)** supporting Mac OS 9.
+* A development library **[SDL2](https://www.libsdl.org)** designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware.
+* Commodore 64/128/PET emulator **[VICE](https://vice-emu.sourceforge.io)**.
+* **[MacintoshPi Virtual Modem](https://github.com/jaromaz/MacintoshPi#macintoshpi-virtual-modem)** using the **[tty0tty](https://github.com/freemed/tty0tty)** and **[tcpser](http://www.jbrain.com/pub/linux/serial/)** projects, running with the two aforementioned emulators for *Apple* and *Commodore* products, and on *Raspberry Pi OS* itself, as well as allowing any original terminal retro-software to connect with modern-day telnet BBSs.
+* CD-ROM, DVD-ROM emulator **[CDEmu](https://cdemu.sourceforge.io)** which allows mounting CD images (iso, toast, cue/bin, mds/mdf etc.) under *Raspberry Pi OS* - runs with *BasiliskII* and *SheepShaver* emulators, as well as on *Raspberry Pi OS*. The emulators are configured automatically to support that virtual CD-ROM drive.
+* A consistent **[MacintoshPi Launcher](https://github.com/jaromaz/MacintoshPi#macintoshpi-launcher)** that runs all of those systems at different resolutions (after reboot) and in different configurations.
+* **[SyncTERM](https://syncterm.bbsdev.net)** - an application for connecting with BBSs from the *Raspberry Pi OS*, compiled in combination with the *SDL library*.
+* Information how to run *Raspberry Pi OS* in **dual-boot** with **[BMC64](https://accentual.com/bmc64/)**, the fastest *Commodore* emulator for *Raspberry Pi* (bare metal/low latency emulator).
 
 **Mac OS images** are pre-configured to support online connections.
+
+Special thanks to [Christian Bauer](https://www.cebix.net) and [kanjitalk755](https://github.com/kanjitalk755).
 
 ## Installation
 
