@@ -33,6 +33,8 @@ sudo apt install -y automake gobjc libudev-dev xa65 build-essential byacc texi2h
                     libnet1-dev libpcap0.8 libpcap0.8-dev libvte-dev libasound2-dev \
                     raspberrypi-kernel-headers
 
+[ $? -ne 0 ] && net_error "Mac OS 7 apt packages"
+
 # Mac OS 7 config
 echo "
 #disk   ${MACOS_DIR}/system70.dsk
@@ -69,7 +71,11 @@ screen win/640/480
 # ROM & System
 cd ${MACOS_DIR}
 wget ${ROM}
+[ $? -ne 0 ] && net_error "Mac OS 7 ROM file"
+
 wget -O ${MACOS_DIR}/hdd.dsk.gz ${HDD_IMAGE}
+[ $? -ne 0 ] && net_error "Mac OS 7 HDD image"
+
 echo "* Decompressing the hard drive image - please wait"
 gzip -d hdd.dsk.gz
 
