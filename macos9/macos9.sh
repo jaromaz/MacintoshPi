@@ -35,6 +35,8 @@ sudo apt install -y libdirectfb-dev automake gobjc libudev-dev xa65 build-essent
                     libgtk2.0-dev x11proto-xf86dga-dev libesd0-dev libxxf86dga-dev \
                     libxxf86dga1 libsdl1.2-dev 
 
+[ $? -ne 0 ] && net_error "Mac OS 9 apt packages"
+
 # Mac OS 9 config
 echo "
 rom    ${MACOS_DIR}/newworld86.rom
@@ -63,8 +65,10 @@ screen win/800/600
 # ROM & System
 cd ${MACOS_DIR}
 wget ${ROM}
+[ $? -ne 0 ] && net_error "Mac OS 9 ROM file"
 unzip newworld86.rom.zip 2>/dev/null
 wget -O ${MACOS_DIR}/hdd.dsk.gz ${HDD_IMAGE}
+[ $? -ne 0 ] && net_error "Mac OS 9 HDD image"
 echo "* Decompressing the hard drive image - please wait"
 gzip -d hdd.dsk.gz
 

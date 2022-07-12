@@ -33,6 +33,8 @@ sudo apt install -y automake gobjc libudev-dev xa65 build-essential byacc texi2h
                     libnet1-dev libpcap0.8 libpcap0.8-dev libvte-dev libasound2-dev \
                     raspberrypi-kernel-headers
 
+[ $? -ne 0 ] && net_error "Mac OS 8 apt packages"
+
 # Mac OS 8 config
 echo "
 rom    ${MACOS_DIR}/QUAD650.ROM
@@ -65,8 +67,10 @@ screen win/640/480
 # ROM & System
 cd ${MACOS_DIR}
 wget ${ROM}
+[ $? -ne 0 ] && net_error "Mac OS 8 ROM file"
 mv Quadra-650.ROM QUAD650.ROM 2>/dev/null
 wget -O ${MACOS_DIR}/hdd.dsk.gz ${HDD_IMAGE}
+[ $? -ne 0 ] && net_error "Mac OS 8 HDD image"
 echo "* Decompressing the hard drive image - please wait"
 gzip -d hdd.dsk.gz
 

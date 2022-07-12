@@ -25,10 +25,13 @@ __     ___      _               _    __  __           _
    \_/  |_|_|   \__|\__,_|\__,_|_|  |_|  |_|\___/ \__,_|\___|_| |_| |_|
                                                                           
 '; printf "\e[0m"; sleep 2
-sudo apt update && sudo apt upgrade -y
+source ./assets/func.sh
+updateinfo
 sudo apt install -y tcpser raspberrypi-kernel-headers build-essential
+[ $? -ne 0 ] && net_error "VICE apt packages"
 mkdir $BDIR && cd $BDIR
 wget https://github.com/freemed/tty0tty/archive/refs/tags/1.2.tar.gz -O ${BDIR}/tty0tty-1.2.tar.gz
+[ $? -ne 0 ] && net_error "tty0tty sources"
 cd $BDIR
 tar zxf tty0tty-1.2.tar.gz
 cd tty0tty-1.2/module
@@ -49,7 +52,7 @@ cat << EOF > vmodem.conf
 # Valid BPS values: 300, 1200, 2400 (default), 9600, 19200, 38400
 BPS=2400
 
-# Log level 0-7 
+# Log level 0-7
 LOG_LEVEL=7
 
 # Log file location

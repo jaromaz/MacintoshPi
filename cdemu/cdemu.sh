@@ -22,17 +22,21 @@ printf "\e[92m"; echo '
  \____|____/|_____|_| |_| |_|\__,_|
 '; printf "\e[0m"; sleep 2
 
+source ./assets/func.sh
+updateinfo
+
 # Software
-sudo apt update && sudo apt upgrade -y
 sudo apt-get install -y dpkg-dev dkms libao-dev intltool libsndfile1-dev libbz2-dev \
                         liblzma-dev gtk-doc-tools gobject-introspection libgirepository1.0-dev \
                         python3-matplotlib libsamplerate0-dev cmake raspberrypi-kernel-headers \
                         dh-systemd
 
+[ $? -ne 0 ] && net_error "CDEmu apt packages"
+
 # CDemu git repo
 rm -rf ~/cdemusrc
 git clone -b 'vhba-module-20210418' --single-branch --depth 1 https://github.com/cdemu/cdemu.git ~/cdemusrc
-
+[ $? -ne 0 ] && net_error "CDEmu sources"
 
 # vhba-module
 cd ~/cdemusrc/vhba-module

@@ -1,6 +1,6 @@
 #!/bin/bash
 # --------------------------------
-#  MacintoshPi Launcher / 2022
+#  MacintoshPi Launcher / v.1.2.5
 # --------------------------------
 #  author: Jaroslaw Mazurkiewicz
 #                        Jaromaz
@@ -46,13 +46,28 @@
 
 
     function run_os {
+
+        clear
+        tput civis
         if aplay -l 2>&1 | grep "no sound"; then SOUND=0; fi
         log_check
+        sleep 2
         if [ "$SOUND" -gt 0 ]; then
             sudo killall pulseaudio &>/dev/null
             sleep 1
             sudo pulseaudio -D &>/dev/null
             sleep 1
+            if [ -f $BASE_DIR/sounds/os${VER}.wav ]; then
+                sudo amixer -q sset Master playback 40%
+                sudo aplay -q $BASE_DIR/sounds/os${VER}.wav
+                sudo amixer -q sset Master playback 80%
+                sleep 1
+                sudo killall pulseaudio &>/dev/null
+                sleep 1
+                sudo pulseaudio -D &>/dev/null
+                sleep 1
+            fi
+
         fi
         [ -z "$SKA" ] || DISK="--disk $SKA"
         [ "$VER" -eq 9 ] && command="sudo "
@@ -61,6 +76,7 @@
         [ "$VER" -lt 9 ] && command="${command} BasiliskII"
         ${command} --config ${MACOS_CONFIG} ${DISK} &>>${LOG}
         clear
+        tput cnorm
         exit
     }
 
@@ -72,18 +88,11 @@
         MACOS_DIR=${BASE_DIR}/macos${VER}
         MACOS_CONFIG=${MACOS_DIR}/macos${VER}.cfg
 
-        # Autostart 
+        # Autostart
         if [ "$SKA" == "macpiautostart" ]; then
             sleep 5
             clear
             SKA=""
-            echo "Waiting 5 sec for system start"
-            for i in {5..1}; do
-                sleep 1
-                printf "${i} ... "
-            done
-            echo "Running ... "
-            sleep 1
             # Mac OS 7/8/9
             if [ "$VER" -lt 10 ]; then
                 run_os
@@ -93,7 +102,7 @@
     fi
 
 
-    # help if not exists conf directory
+    # Help info
     [ -d ${CONF_DIR}/${SYS} ] || hlp
 
     # Copy config files
@@ -108,4 +117,4 @@
         exit
     fi
 
-    reboot
+    sudo reboot

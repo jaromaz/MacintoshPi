@@ -18,7 +18,7 @@ The project consists of the following auto-compiling and installing bash scripts
 * Commodore 64/128/PET emulator **[VICE](https://vice-emu.sourceforge.io)**.
 * **[MacintoshPi Virtual Modem](https://github.com/jaromaz/MacintoshPi#macintoshpi-virtual-modem)** using the **[tty0tty](https://github.com/freemed/tty0tty)** and **[tcpser](http://www.jbrain.com/pub/linux/serial/)** projects, running with the two aforementioned emulators for *Apple* and *Commodore* products, and on *Raspberry Pi OS* itself, as well as allowing any original terminal retro-software to connect with modern-day telnet BBSs.
 * CD-ROM, DVD-ROM emulator **[CDEmu](https://cdemu.sourceforge.io)** which allows mounting CD images (iso, toast, cue/bin, mds/mdf etc.) under *Raspberry Pi OS* - runs with *BasiliskII* and *SheepShaver* emulators, as well as on *Raspberry Pi OS*. The emulators are configured automatically to support that virtual CD-ROM drive.
-* A consistent **[MacintoshPi Launcher](https://github.com/jaromaz/MacintoshPi#macintoshpi-launcher)** that runs all of those systems at different resolutions (after reboot) and in different configurations.
+* A consistent **[MacintoshPi Launcher](https://github.com/jaromaz/MacintoshPi#macintoshpi-launcher)** that runs all of those systems at different resolutions (after reboot), in different configurations, with autostart support and with various startup chimes.
 * **[SyncTERM](https://syncterm.bbsdev.net)** - an application for connecting with BBSs from the *Raspberry Pi OS*, compiled in combination with the *SDL library*.
 * Information how to run *Raspberry Pi OS* in **dual-boot** with **[BMC64](https://accentual.com/bmc64/)**, the fastest *Commodore* emulator for *Raspberry Pi* (bare metal/low latency emulator).
 
@@ -142,6 +142,8 @@ The maximum emulator performance is achieved in the native resolution of the emu
 The launcher's task is to launch a given version of *Mac OS*, and if one is already running with appropriate parameters, then to overwrite ```config.txt``` and any other system files with the appropriate screen resolution and position assigned to a specific system or any other defined application, and then to launch the emulator or application right after a system restart, this time in the new resolution.
 
 The name of the directory with the data with which the system is to be overwritten is identical as the name of the parameter following the ```mac``` command, e.g. ```mac os8-480``` will restart *Raspberry Pi OS* in 640x480 resolution, and then launch ```Mac OS 8``` also in that resolution, but the ```mac os8``` command will simply launch *Mac OS 8* in the most recently selected resolution.
+
+Various startup chimes are played at the launch of each system - depending on the selected resolution: Macintosh 128K, Macintosh Classic II, Macintosh Color Classic, Macintosh Performa 520, Power Macintosh 550, Power Macintosh G3 sounds.
 
 The Launcher allows also ```.img``` or ```.dsk``` files to be added to *Mac OS* using e.g. ```mac os7 file.img``` - then the *Mac OS* concerned will be launched and the image content will appear on the desktop as an additional drive.
 
