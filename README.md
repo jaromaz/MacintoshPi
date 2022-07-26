@@ -60,6 +60,7 @@ Each system must be launched with the appropriate command: ```mac os7```, ```m
 *Basilisk II* and *SheepShaver* emulators can be stopped by using the key combination *CTRL+SHIFT+ESC*. This causes an immediate return to the command line. The *COMMAND* key is acquired with the left *ALT* key in *Mac OS 9*, and with the *CTRL* key in *Mac OS 7* and *Mac OS 8*.
 For more information about those emulators visit the [BasiliskII](https://basilisk.cebix.net) and [SheepShaver](https://sheepshaver.cebix.net) websites.
 
+![MacintoshPi @ Raspberry Pi](assets/img/maconst.png)
 
 ### VICE
 
@@ -141,7 +142,7 @@ The maximum emulator performance is achieved in the native resolution of the emu
 
 The launcher's task is to launch a given version of *Mac OS*, and if one is already running with appropriate parameters, then to overwrite ```config.txt``` and any other system files with the appropriate screen resolution and position assigned to a specific system or any other defined application, and then to launch the emulator or application right after a system restart, this time in the new resolution.
 
-The name of the directory with the data with which the system is to be overwritten is identical as the name of the parameter following the ```mac``` command, e.g. ```mac os8-480``` will restart *Raspberry Pi OS* in 640x480 resolution, and then launch ```Mac OS 8``` also in that resolution, but the ```mac os8``` command will simply launch *Mac OS 8* in the most recently selected resolution.
+The name of the directory with the data with which the system is to be overwritten is identical as the name of the parameter following the ```mac``` command, e.g. ```mac os8-480``` will restart *Raspberry Pi OS* in 640x480 resolution, and then launch *Mac OS 8* also in that resolution, but the ```mac os8``` command will simply launch *Mac OS 8* in the most recently selected resolution.
 
 Various startup chimes are played at the launch of each system - depending on the selected resolution: Macintosh 128K, Macintosh Classic II, Macintosh Color Classic, Macintosh Performa 520, Power Macintosh 550, Power Macintosh G3 sounds.
 
@@ -194,6 +195,8 @@ The keyboard and mouse are *Logiteh MK295 Silent Wireless Combo* - they only s
 
 ### About this Project
 I've been working on the topic of Apple computers emulation for about five years now (because I really like and appreciate Apple retro systems), and the topic is quite complex: problems with building the correct images, with configuring system images for Internet support, with the appropriate configs for emulators, with the correct options for compiling emulators and (separately) SDL2 (because, of course, SDL2 from a package won't work in emulation), with performance, with the correct compilation of NetDriver, with versions of libraries (because they have to be legacy), with minimizing mouse movement delay, problems with sound, etc. etc. Of course, I'm talking about the problems that beginners will encounter, after which they will get discouraged and throw these emulators out. Since I solved all these problems on my Raspberry Pi, I decided to make this solution available to Everyone, so that you can just run one script and get all three systems in one package without any effort - and that's what this little project is.
+
+For more information (and hi-res photos) please visit my website: https://jm.iq.pl/MacintoshPi
 
 ### Support
 
