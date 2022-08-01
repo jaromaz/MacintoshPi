@@ -203,6 +203,7 @@ sudo apt install -y automake gobjc libudev-dev xa65 build-essential byacc texi2h
 Base_dir
 mkdir -p ${SRC_DIR}
 
+[ -d "/home/pi/Downloads" ] || mkdir /home/pi/Downloads
 
 wget ${SDL2_SOURCE} -O - | tar -xz -C ${SRC_DIR}
 [ $? -ne 0 ] && net_error "SDL2 sources"
