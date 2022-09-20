@@ -156,7 +156,6 @@ Software for *Mac OS 7*, *Mac OS 8* and *Mac OS 9* can be found on the following
 - [Macintosh Repository](https://www.macintoshrepository.org)
 - [mac.org](http://www.mac.org)
 - [The Macintosh Archives](http://websites.umich.edu/~archive/mac/)
-- [Macintosh Archive](https://mirror.macintosharchive.org)
 - [Mac GUI](https://macgui.com/downloads/?cat_id=56)
 
 These websites can be used comfortably in the *Chromium* browser directly in *Raspberry Pi OS* - downloaded files are saved by default in directory ```/home/pi/Downloads```, which is configured as a shared directory for all *Mac OSs* contained in this project - under *Mac OS*, it is displayed as a *Unix drive*.
