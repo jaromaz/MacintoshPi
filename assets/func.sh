@@ -14,7 +14,7 @@
 # MacintoshPi functions
 # --------------------------------------------------------
 
-VERSION="1.2.5"
+VERSION="1.3.0"
 BASE_DIR="/usr/share/macintoshpi"
 CONF_DIR="/etc/macintoshpi"
 WAV_DIR="${BASE_DIR}/sounds"
@@ -27,6 +27,7 @@ BASILISK_FILE="/usr/local/bin/BasiliskII"
 SHEEPSHAVER_FILE="/usr/local/bin/SheepShaver"
 SDL2_FILE="/usr/local/lib/libSDL2-2.0.so.0.7.0"
 HDD_IMAGES="http://homer-retro.space/appfiles"
+ASOFT="${HDD_IMAGES}/as/asoft.tar.gz"
 ROM4OS[7]="https://github.com/macmade/Macintosh-ROMs/raw/18e1d0a9756f8ae3b9c005a976d292d7cf0a6f14/Performa-630.ROM"
 ROM4OS[8]="https://github.com/macmade/Macintosh-ROMs/raw/main/Quadra-650.ROM"
 ROM4OS[9]="https://www.redundantrobot.com/sheepshaver_files/roms/newworld86.rom.zip"
@@ -41,10 +42,11 @@ parent=$(cat /proc/$PPID/comm)
 if [ "$parent" != "build_all.sh" ]; then
 cat <<EOF
 
-* WARNING: To install this software, you must first update and reboot your
-           system. If you want to perform these steps now, then press "y" key.
-           If your system is up to date and rebooted, then press any other
-           key or wait 30 seconds.
+* WARNING: 
+To install this software, you must first update and reboot your
+system. If you want to perform these steps now, then press "y" key.
+If your system is up to date and rebooted, then press any other
+key or wait 30 seconds.
 
 EOF
 
@@ -53,12 +55,19 @@ read -t 30 -n 1 -s updinfo
 fi
 }
 
-function installinfo {
-echo "   * INFO: The build and installation process will take approximately"
-echo "           two hours"
-printf "\n           "
+
+function mtimer {
 for i in {10..1}; do printf "$i ... "; sleep 1; done
 echo
+}
+
+function installinfo {
+cat << EOF
+* INFO: 
+The build and installation process will take approximately two hours.
+
+EOF
+mtimer
 }
 
 
@@ -84,14 +93,19 @@ function Base_dir {
    [ -d ${BASE_DIR} ] || ( sudo mkdir -p ${BASE_DIR} && sudo chown pi:pi ${BASE_DIR} )
 }
 
+
+function Src_dir {
+   [ -d ${SRC_DIR} ] || ( sudo mkdir -p ${SRC_DIR} && sudo chown pi:pi ${SRC_DIR} )
+}
+
 function Build_NetDriver {
 
 printf "\e[95m"; echo '
- _   _      _   ____       _                
-| \ | | ___| |_|  _ \ _ __(_)_   _____ _ __ 
+ _   _      _   ____       _
+| \ | | ___| |_|  _ \ _ __(_)_   _____ _ __
 |  \| |/ _ \ __| | | |  __| \ \ / / _ \  __|
-| |\  |  __/ |_| |_| | |  | |\ V /  __/ |   
-|_| \_|\___|\__|____/|_|  |_| \_/ \___|_|   
+| |\  |  __/ |_| |_| | |  | |\ V /  __/ |
+|_| \_|\___|\__|____/|_|  |_| \_/ \___|_|
 
 '; printf "\e[0m"; sleep 2
 
@@ -108,12 +122,12 @@ sudo modprobe sheep_net
 function Build_SheepShaver {
 
 printf "\e[95m"; echo '
- ____  _                    ____  _                          
-/ ___|| |__   ___  ___ _ __/ ___|| |__   __ ___   _____ _ __ 
+ ____  _                    ____  _
+/ ___|| |__   ___  ___ _ __/ ___|| |__   __ ___   _____ _ __
 \___ \|  _ \ / _ \/ _ \  _ \___ \|  _ \ / _` \ \ / / _ \  __|
- ___) | | | |  __/  __/ |_) |__) | | | | (_| |\ V /  __/ |   
-|____/|_| |_|\___|\___| .__/____/|_| |_|\__,_| \_/ \___|_|   
-                      |_|                                    
+ ___) | | | |  __/  __/ |_) |__) | | | | (_| |\ V /  __/ |
+|____/|_| |_|\___|\___| .__/____/|_| |_|\__,_| \_/ \___|_|
+                      |_|
 '; printf "\e[0m"; sleep 2
 
 mkdir -p ${SRC_DIR} 2>/dev/null
@@ -153,10 +167,10 @@ rm -rf ${SRC_DIR}
 function Build_BasiliskII {
 
 printf "\e[95m"; echo '
- ____            _ _ _     _      ___ ___ 
+ ____            _ _ _     _      ___ ___
 | __ )  __ _ ___(_) (_)___| | __ |_ _|_ _|
-|  _ \ / _` / __| | | / __| |/ /  | | | | 
-| |_) | (_| \__ \ | | \__ \   <   | | | | 
+|  _ \ / _` / __| | | / __| |/ /  | | | |
+| |_) | (_| \__ \ | | \__ \   <   | | | |
 |____/ \__,_|___/_|_|_|___/_|\_\ |___|___|
 
 '; printf "\e[0m"; sleep 2
@@ -185,10 +199,10 @@ rm -rf ${SRC_DIR}
 function Build_SDL2 {
 
 printf "\e[95m"; echo '
- ____  ____  _     ____  
-/ ___||  _ \| |   |___ \ 
+ ____  ____  _     ____
+/ ___||  _ \| |   |___ \
 \___ \| | | | |     __) |
- ___) | |_| | |___ / __/ 
+ ___) | |_| | |___ / __/
 |____/|____/|_____|_____|
 
 '; printf "\e[0m"; sleep 2
@@ -299,3 +313,10 @@ function logo {
     printf "\e[0m\n"
 }
 
+
+function Asoft {
+    if ! [ -d ${BASE_DIR}/asoft ] ; then
+        wget -c $ASOFT -O - | tar -xz -C $BASE_DIR
+        [ $? -ne 0 ] && net_error "asoft"
+    fi
+}
