@@ -14,7 +14,7 @@ This part of project must be installed on a clean FULL *Raspberry Pi OS (Legacy
 
 *Raspberry Pi OS (Legacy)* can be installed from the *Raspberry Pi Imager* level by selecting: *CHOOSE OS -> Raspberry Pi OS (other) -> Raspberry Pi OS (Legacy)*, *CHOOSE STORAGE -> WRITE*.
 
-<p align="center"><img src="assets/img/imager.png" width="50%"></p>
+<p align="center"><img src="../assets/img/imager.png" width="50%"></p>
 
 To activate the OpenGL drivers you need to run raspi-config from a terminal window.
 Enter the comand: ```sudo raspi-config```
