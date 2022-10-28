@@ -8,7 +8,7 @@ This bonus part consists of the following auto-compiling and installing bash scr
 * Apple \]\[ computer emulator **[linapple](https://linapple.sourceforge.net/screenshots.html)** supporting Apple \]\[, Apple \]\[+ , Apple //e, and enhanced Apple //e computers.
 * Altair/IMSAI emulator **[z80pack](https://www.autometer.de/unix4fun/z80pack/)** supporting Altair 8800 system with 8080 or Z80 CPU, IMSAI 8080 system with 8080 or Z80 CPU, generic Z80/8080 CPU emulation, emulation of a complete system for running CP/M 1, CP/M 2, CPM 3 and MP/M 2.
 
-<p align="center"><img src="../assets/img/imsai.png" width="70%"></p>
+<p align="center"><img src="/assets/img/imsai.png" width="70%"></p>
 
 ## Installation
 
@@ -38,7 +38,7 @@ The process of compiling and installing packages can take about 10 minutes.
 
 The installation scripts must be run from the ```pi``` user.
 
-<p align="center"><img src="../assets/img/apple12.png" width="70%"></p>
+<p align="center"><img src="/assets/img/apple12.png" width="70%"></p>
 
 ## Start up
 
@@ -54,7 +54,7 @@ The following commands run individual machines:
 
 ### Apple-1
 
-<p align="center"><img src="../assets/img/apple1.gif" width="70%"></p>
+<p align="center"><img src="/assets/img/apple1.gif" width="70%"></p>
 
 pom1 has many options to configure and utilize the emulator. They are 
 accessed by Ctrl+\<letter\>. 
@@ -76,7 +76,7 @@ accessed by Ctrl+\<letter\>.
 ### Apple ][
 
 
-<p align="center"><img src="../assets/img/apple2.gif" width="70%"></p>
+<p align="center"><img src="/assets/img/apple2.gif" width="70%"></p>
 
 Clicking in the LinApple window will capture the mouse. It may be
 released by pressing any function key.
