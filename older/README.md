@@ -7,7 +7,11 @@ This bonus part consists of the following auto-compiling and installing bash scr
 * Apple-1 computer emulator **[pom1](http://pom1.sourceforge.net)**.
 * Apple \]\[ computer emulator **[linapple](https://linapple.sourceforge.net/screenshots.html)** supporting Apple \]\[, Apple \]\[+ , Apple //e, and enhanced Apple //e computers.
 * Altair/IMSAI emulator **[z80pack](https://www.autometer.de/unix4fun/z80pack/)** supporting Altair 8800 system with 8080 or Z80 CPU, IMSAI 8080 system with 8080 or Z80 CPU, generic Z80/8080 CPU emulation, emulation of a complete system for running CP/M 1, CP/M 2, CPM 3 and MP/M 2.
+
+This part of the MacintoshPi project runs on Raspberry Pi Zero W, Zero 2 W, 2, 2B, 3, 3B, 3A+, 3B+, 4, 400.
+
 <p align="center"><img src="../assets/img/imsai.png" width="70%"></p>
+
 
 ## Installation
 
