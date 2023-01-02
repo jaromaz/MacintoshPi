@@ -1,6 +1,6 @@
 # MacintoshPi
 
-MacintoshPi is a small project that allows running full-screen versions of Apple's *Mac OS 7*, *Mac OS 8* and *Mac OS 9* with sound, active Internet connection and modem emulation under *Raspberry Pi*. All this without the X.org manager, only a multimedia SDL2 library and from the CLI / *Raspberry Pi OS Lite*. This lets emulators use full power of *Raspberry Pi*, making them more stable and useful in combination with additional retro-software. Installation requires running a single script on a clean *Raspberry Pi OS Lite* and waiting about two hours for the packages to compile and install. In addition, thanks to a document contained in the project, it is possible in dual-boot to place the fastest (bare-metal) *Commodore 64/128/PET* emulator **BMC64**, thus building an interesting retro package on a single SD card. The entire *MacintoshPi* project runs on **Raspberry Pi Zero W**, **Zero 2 W**, **2**, **2B**, **3**, **3B**, **3A+**, **3B+** (at present, it does not run on version 4).
+MacintoshPi is a small project that allows running full-screen versions of Apple's *Mac OS 7*, *Mac OS 8* and *Mac OS 9* with sound, active Internet connection and modem emulation under *Raspberry Pi*. All this without the X.org manager, only a multimedia SDL2 library and from the CLI / *Raspberry Pi OS (Legacy)*. This lets emulators use full power of *Raspberry Pi*, making them more stable and useful in combination with additional retro-software. Installation requires running a single script on a clean *Raspberry Pi OS (full) Legacy* and waiting about two hours for the packages to compile and install. In addition, thanks to a document contained in the project, it is possible in dual-boot to place the fastest (bare-metal) *Commodore 64/128/PET* emulator **BMC64**, thus building an interesting retro package on a single SD card. The entire *MacintoshPi* project runs on **Raspberry Pi Zero W**, **Zero 2 W**, **2**, **2B**, **3**, **3B**, **3A+**, **3B+** (at present, it does not run on version 4).
 
 Below you will find a short clip showing what MacintoshPi can do:
 
@@ -36,7 +36,7 @@ Additional instructions for these emulators can be found in **[README.md](older/
 
 ## Installation
 
-The project must be installed on a clean *Raspberry Pi OS Lite (Legacy)* or the full version of *Raspberry Pi OS (Legacy)*, but in the latter case you must first switch to command line or set system start to CLI.
+The project must be installed on a clean, full *Raspberry Pi OS (Legacy)* but you must first switch to command line or set system start to CLI.
 *Raspberry Pi OS (Legacy)* can be installed from the *Raspberry Pi Imager* level by selecting: *CHOOSE OS -> Raspberry Pi OS (other) -> Raspberry Pi OS (Legacy)*, *CHOOSE STORAGE -> WRITE*.
 
 <p align="center"><img src="assets/img/imager.png" width="50%"></p>
