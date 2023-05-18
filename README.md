@@ -37,7 +37,7 @@ Additional instructions for these emulators can be found in **[README.md](older/
 ## Installation
 
 The project must be installed on a clean, full *Raspberry Pi OS (Legacy)* but you must first switch to command line or set system start to CLI.
-*Raspberry Pi OS (Legacy)* can be installed from the *Raspberry Pi Imager* level by selecting: *CHOOSE OS -> Raspberry Pi OS (other) -> Raspberry Pi OS (Legacy)*, *CHOOSE STORAGE -> WRITE*.
+*Raspberry Pi OS (Legacy)* can be installed from the *Raspberry Pi Imager* level by selecting: *CHOOSE OS -> Raspberry Pi OS (other) -> Raspberry Pi OS (Legacy)*, *CHOOSE STORAGE -> WRITE*. The installation process requires a minimum 16 GB SD card.
 
 <p align="center"><img src="assets/img/imager.png" width="50%"></p>
 
