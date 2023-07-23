@@ -14,7 +14,7 @@
 # MacintoshPi functions
 # --------------------------------------------------------
 
-VERSION="1.3.2"
+VERSION="1.3.3"
 BASE_DIR="/usr/share/macintoshpi"
 CONF_DIR="/etc/macintoshpi"
 WAV_DIR="${BASE_DIR}/sounds"

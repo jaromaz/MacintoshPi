@@ -24,15 +24,10 @@ The project consists of the following auto-compiling and installing bash scripts
 
 **Mac OS images** are pre-configured to support online connections.
 
+Apple-1, Apple ][, Altair and IMSAI emulators moved to the new [DinosPi](https://github.com/jaromaz/DinosPi) project.
+
 Special thanks to [Christian Bauer](https://www.cebix.net) and [kanjitalk755](https://github.com/kanjitalk755).
 
-As a bonus, additional auto-compiling and installing bash scripts for a bit older machines:
-
-* Apple-1 computer emulator **[pom1](http://pom1.sourceforge.net)**.
-* Apple \]\[ computer emulator **[linapple](https://linapple.sourceforge.net/screenshots.html)** supporting Apple \]\[, Apple \]\[+ , Apple //e, and enhanced Apple //e computers.
-* Altair/IMSAI emulator **[z80pack](https://www.autometer.de/unix4fun/z80pack/)** supporting Altair 8800 system with 8080 or Z80 CPU, IMSAI 8080 system with 8080 or Z80 CPU, generic Z80/8080 CPU emulation, emulation of a complete system for running CP/M 1, CP/M 2, CPM 3 and MP/M 2.
-
-Additional instructions for these emulators can be found in **[README.md](older/README.md)** in the [older](older/README.md) directory.
 
 ## Installation
 
