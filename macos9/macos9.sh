@@ -64,7 +64,7 @@ screen win/800/600
 
 # ROM & System
 cd ${MACOS_DIR}
-wget ${ROM}
+wget --no-check-certificate ${ROM}
 [ $? -ne 0 ] && net_error "Mac OS 9 ROM file"
 unzip newworld86.rom.zip 2>/dev/null
 wget -O ${MACOS_DIR}/hdd.dsk.gz ${HDD_IMAGE}

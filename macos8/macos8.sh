@@ -66,7 +66,7 @@ screen win/640/480
 
 # ROM & System
 cd ${MACOS_DIR}
-wget ${ROM}
+wget --no-check-certificate ${ROM}
 [ $? -ne 0 ] && net_error "Mac OS 8 ROM file"
 mv Quadra-650.ROM QUAD650.ROM 2>/dev/null
 wget -O ${MACOS_DIR}/hdd.dsk.gz ${HDD_IMAGE}

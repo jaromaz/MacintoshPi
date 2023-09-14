@@ -70,7 +70,7 @@ screen win/640/480
 
 # ROM & System
 cd ${MACOS_DIR}
-wget ${ROM}
+wget --no-check-certificate ${ROM}
 [ $? -ne 0 ] && net_error "Mac OS 7 ROM file"
 
 wget -O ${MACOS_DIR}/hdd.dsk.gz ${HDD_IMAGE}
