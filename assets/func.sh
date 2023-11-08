@@ -14,12 +14,12 @@
 # MacintoshPi functions
 # --------------------------------------------------------
 
-VERSION="1.3.3"
+VERSION="1.4.1"
 BASE_DIR="/usr/share/macintoshpi"
 CONF_DIR="/etc/macintoshpi"
 WAV_DIR="${BASE_DIR}/sounds"
 SRC_DIR="${BASE_DIR}/src"
-BASILISK_REPO="https://github.com/kanjitalk755/macemu/archive/master.zip"
+BASILISK_REPO="https://github.com/kanjitalk755/macemu"
 SHEEPSHAVER_REPO=${BASILISK_REPO}
 SDL2_SOURCE="https://www.libsdl.org/release/SDL2-2.0.7.tar.gz"
 VICE_SOURCE="https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.4.tar.gz"
@@ -30,7 +30,7 @@ HDD_IMAGES="https://homer-retro.space/appfiles"
 ASOFT="${HDD_IMAGES}/as/asoft.tar.gz"
 ROM4OS[7]="https://github.com/macmade/Macintosh-ROMs/raw/18e1d0a9756f8ae3b9c005a976d292d7cf0a6f14/Performa-630.ROM"
 ROM4OS[8]="https://github.com/macmade/Macintosh-ROMs/raw/main/Quadra-650.ROM"
-ROM4OS[9]="https://www.redundantrobot.com/sheepshaver_files/roms/newworld86.rom.zip"
+ROM4OS[9]="https://smb4.s3.us-west-2.amazonaws.com/sheepshaver/apple_roms/newworld86.rom.zip"
 
 
 function usercheck {
@@ -131,12 +131,12 @@ printf "\e[95m"; echo '
 '; printf "\e[0m"; sleep 2
 
 mkdir -p ${SRC_DIR} 2>/dev/null
-
-wget -O ${SRC_DIR}/master.zip ${SHEEPSHAVER_REPO}
-[ $? -ne 0 ] && net_error "SheepShaver sources"
-
-unzip ${SRC_DIR}/master.zip -d ${SRC_DIR}
-cd ${SRC_DIR}/macemu-*/SheepShaver
+cd ${SRC_DIR}
+rm -rf macemu 2>/dev/null
+git clone ${BASILISK_REPO}
+cd ${SRC_DIR}/macemu
+git checkout 33c3419
+cd ${SRC_DIR}/macemu/SheepShaver
 make links
 cd src/Unix
 
@@ -177,11 +177,11 @@ printf "\e[95m"; echo '
 
 mkdir -p ${SRC_DIR} 2>/dev/null
 
-wget -O ${SRC_DIR}/master.zip ${BASILISK_REPO}
-[ $? -ne 0 ] && net_error "Basilisk II sources"
-
-unzip ${SRC_DIR}/master.zip -d /${SRC_DIR}
-cd ${SRC_DIR}/macemu-*/BasiliskII/src/Unix/
+cd ${SRC_DIR}
+git clone ${BASILISK_REPO}
+cd ${SRC_DIR}/macemu
+git checkout 33c3419
+cd ${SRC_DIR}/macemu/BasiliskII/src/Unix/
 NO_CONFIGURE=1 ./autogen.sh &&
 ./configure --enable-sdl-audio --enable-sdl-framework \
             --enable-sdl-video --disable-vosf \
